@@ -12,6 +12,10 @@
 		C839CCF11DB5043400E85E37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C839CCEF1DB5043400E85E37 /* LaunchScreen.storyboard */; };
 		C839CCFC1DB5043400E85E37 /* Look_AroundTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C839CCFB1DB5043400E85E37 /* Look_AroundTests.swift */; };
 		C839CD0B1DB5057A00E85E37 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C839CD0A1DB5057A00E85E37 /* Main.storyboard */; };
+		C839CD0D1DB50AC900E85E37 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C839CD0C1DB50AC900E85E37 /* BaseViewController.swift */; };
+		C839CD0F1DB50B1200E85E37 /* ResultContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C839CD0E1DB50B1200E85E37 /* ResultContainerViewController.swift */; };
+		C839CD111DB50B4100E85E37 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C839CD101DB50B4100E85E37 /* MapViewController.swift */; };
+		C839CD131DB50B5A00E85E37 /* ResultListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C839CD121DB50B5A00E85E37 /* ResultListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +38,10 @@
 		C839CCFB1DB5043400E85E37 /* Look_AroundTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Look_AroundTests.swift; sourceTree = "<group>"; };
 		C839CCFD1DB5043400E85E37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C839CD0A1DB5057A00E85E37 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		C839CD0C1DB50AC900E85E37 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		C839CD0E1DB50B1200E85E37 /* ResultContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultContainerViewController.swift; sourceTree = "<group>"; };
+		C839CD101DB50B4100E85E37 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		C839CD121DB50B5A00E85E37 /* ResultListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +107,10 @@
 		C839CD061DB504E700E85E37 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				C839CD0C1DB50AC900E85E37 /* BaseViewController.swift */,
+				C839CD0E1DB50B1200E85E37 /* ResultContainerViewController.swift */,
+				C839CD101DB50B4100E85E37 /* MapViewController.swift */,
+				C839CD121DB50B5A00E85E37 /* ResultListViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -229,6 +241,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C839CCE71DB5043400E85E37 /* AppDelegate.swift in Sources */,
+				C839CD0F1DB50B1200E85E37 /* ResultContainerViewController.swift in Sources */,
+				C839CD131DB50B5A00E85E37 /* ResultListViewController.swift in Sources */,
+				C839CD0D1DB50AC900E85E37 /* BaseViewController.swift in Sources */,
+				C839CD111DB50B4100E85E37 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -358,6 +374,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Look Around/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.opensooq.LookAround;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -370,6 +387,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Look Around/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.opensooq.LookAround;
 				PRODUCT_NAME = "$(TARGET_NAME)";
