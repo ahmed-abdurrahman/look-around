@@ -6,11 +6,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Settings View Controller-->
         <scene sceneID="5ft-Xg-VUA">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Tvd-ku-r08" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="gcY-Jh-h4U" sceneMemberID="viewController">
+                <viewController id="gcY-Jh-h4U" customClass="SettingsViewController" customModule="Look_Around" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="x0g-rg-twY"/>
                         <viewControllerLayoutGuide type="bottom" id="mO9-uk-xXz"/>
@@ -35,6 +34,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="kxw-4D-BJk"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tvd-ku-r08" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="954.39999999999998" y="80.50974512743629"/>
         </scene>
