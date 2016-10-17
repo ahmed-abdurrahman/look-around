@@ -11,12 +11,18 @@ target 'Look Around' do
   pod 'MBProgressHUD', '~> 0.9'
   pod 'SwiftyJSON', '~> 2.3'
   pod 'SDWebImage', '~>3.7'
-  pod 'IQKeyboardManagerSwift', '~> 4.0'
   pod 'GoogleMaps'
 
   target 'Look AroundTests' do
     inherit! :search_paths
     # Pods for testing
   end
+end
 
+post_install do |installer|
+    installer.pods_project.targets.each do |target|
+        target.build_configurations.each do |config|
+            config.build_settings['SWIFT_VERSION'] = '2.3'
+        end
+    end
 end
