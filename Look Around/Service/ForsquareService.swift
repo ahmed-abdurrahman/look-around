@@ -16,16 +16,23 @@ class ForsquareService {
     // Singleton shared instance
     static let sharedInstance = ForsquareService()
     
-    func getNearbyVenues(success: (venues: [VenueModel]) -> Void, fail: (error: NSError) -> Void) {
+    func getNearbyVenues(lat: Double?, long: Double?, success: (venues: [VenueModel]) -> Void, fail: (error: NSError) -> Void) {
     
         let url = UrlBuilderUtil.exploreUrl
-        let params: [String: AnyObject] = [
+        var params: [String: AnyObject] = [
             "client_id": Keys.forsquareClientId,
             "client_secret": Keys.forsquareClientSecret,
-            "near": "Chicago, IL",
             "section": "topPicks",
             "v":"20161017"
         ]
+        
+        if let lat = lat,
+            long = long {
+            params["ll"] = "\(lat),\(long)"
+        } else {
+            params["near"] = "Amman, Jordan"
+        }
+        
         
         Alamofire.request(.GET, url, parameters: params).responseJSON { (response) in
             if let error = HttpErrorHandler.checkResponseForErrors(response) {
@@ -33,7 +40,7 @@ class ForsquareService {
                 fail(error: error)
             } else if let value = response.result.value {
                     let json = JSON(value)
-//                    print(json)
+
                     
                     
                 if let itemsArray = json["response"]["groups"].array {

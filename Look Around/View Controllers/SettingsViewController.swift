@@ -7,20 +7,34 @@
 //
 
 import UIKit
+import CoreLocation
 
 class SettingsViewController: BaseViewController {
 
+    let locationManager = CLLocationManager()
+    var deviceCoordinates: CLLocationCoordinate2D? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
+        locationManager.requestWhenInUseAuthorization()
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+        }
+        
         // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        self.deviceCoordinates = locationManager.location?.coordinate
         
-        self.displayActivityIndicator("Contacting Forsquare..")
-        ForsquareService.sharedInstance.getNearbyVenues({ venues in
+        
+        self.displayActivityIndicator("Connecting with Forsquare...")
+        ForsquareService.sharedInstance.getNearbyVenues(deviceCoordinates?.latitude, long: deviceCoordinates?.longitude, success: { venues in
             self.hideActivityIndicator()
             for v in venues {
                 print(">>>> \(v.name!) : \(v.id!)")
@@ -32,4 +46,25 @@ class SettingsViewController: BaseViewController {
         }
     }
 
+}
+
+extension SettingsViewController: CLLocationManagerDelegate {
+    
+    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+        
+        if status == .AuthorizedWhenInUse {
+            // 4
+            locationManager.startUpdatingLocation()
+        }
+    }
+    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        guard let location = manager.location  else {return}
+        self.deviceCoordinates = location.coordinate
+        self.locationManager.stopUpdatingLocation()
+        
+        print("Device Coordinates: \(deviceCoordinates?.latitude), \(deviceCoordinates?.longitude)")
+    }
+    
 }
