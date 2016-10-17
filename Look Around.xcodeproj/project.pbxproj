@@ -8,11 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		C839CCE71DB5043400E85E37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C839CCE61DB5043400E85E37 /* AppDelegate.swift */; };
-		C839CCE91DB5043400E85E37 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C839CCE81DB5043400E85E37 /* ViewController.swift */; };
-		C839CCEC1DB5043400E85E37 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C839CCEA1DB5043400E85E37 /* Main.storyboard */; };
 		C839CCEE1DB5043400E85E37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C839CCED1DB5043400E85E37 /* Assets.xcassets */; };
 		C839CCF11DB5043400E85E37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C839CCEF1DB5043400E85E37 /* LaunchScreen.storyboard */; };
 		C839CCFC1DB5043400E85E37 /* Look_AroundTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C839CCFB1DB5043400E85E37 /* Look_AroundTests.swift */; };
+		C839CD0B1DB5057A00E85E37 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C839CD0A1DB5057A00E85E37 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,14 +27,13 @@
 /* Begin PBXFileReference section */
 		C839CCE31DB5043400E85E37 /* Look Around.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Look Around.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C839CCE61DB5043400E85E37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C839CCE81DB5043400E85E37 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		C839CCEB1DB5043400E85E37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C839CCED1DB5043400E85E37 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C839CCF01DB5043400E85E37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C839CCF21DB5043400E85E37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C839CCF71DB5043400E85E37 /* Look AroundTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Look AroundTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C839CCFB1DB5043400E85E37 /* Look_AroundTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Look_AroundTests.swift; sourceTree = "<group>"; };
 		C839CCFD1DB5043400E85E37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C839CD0A1DB5057A00E85E37 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,9 +75,11 @@
 		C839CCE51DB5043400E85E37 /* Look Around */ = {
 			isa = PBXGroup;
 			children = (
+				C839CD091DB5053A00E85E37 /* Models */,
+				C839CD081DB5051D00E85E37 /* Service */,
+				C839CD071DB504F100E85E37 /* Storyboards */,
+				C839CD061DB504E700E85E37 /* View Controllers */,
 				C839CCE61DB5043400E85E37 /* AppDelegate.swift */,
-				C839CCE81DB5043400E85E37 /* ViewController.swift */,
-				C839CCEA1DB5043400E85E37 /* Main.storyboard */,
 				C839CCED1DB5043400E85E37 /* Assets.xcassets */,
 				C839CCEF1DB5043400E85E37 /* LaunchScreen.storyboard */,
 				C839CCF21DB5043400E85E37 /* Info.plist */,
@@ -94,6 +94,35 @@
 				C839CCFD1DB5043400E85E37 /* Info.plist */,
 			);
 			path = "Look AroundTests";
+			sourceTree = "<group>";
+		};
+		C839CD061DB504E700E85E37 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		C839CD071DB504F100E85E37 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				C839CD0A1DB5057A00E85E37 /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		C839CD081DB5051D00E85E37 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		C839CD091DB5053A00E85E37 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,9 +208,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C839CD0B1DB5057A00E85E37 /* Main.storyboard in Resources */,
 				C839CCF11DB5043400E85E37 /* LaunchScreen.storyboard in Resources */,
 				C839CCEE1DB5043400E85E37 /* Assets.xcassets in Resources */,
-				C839CCEC1DB5043400E85E37 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,7 +228,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C839CCE91DB5043400E85E37 /* ViewController.swift in Sources */,
 				C839CCE71DB5043400E85E37 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -223,14 +251,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		C839CCEA1DB5043400E85E37 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C839CCEB1DB5043400E85E37 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		C839CCEF1DB5043400E85E37 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -339,9 +359,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Look Around/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.opensooq.Look-Around";
+				PRODUCT_BUNDLE_IDENTIFIER = com.opensooq.LookAround;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -351,9 +371,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Look Around/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.opensooq.Look-Around";
+				PRODUCT_BUNDLE_IDENTIFIER = com.opensooq.LookAround;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};
