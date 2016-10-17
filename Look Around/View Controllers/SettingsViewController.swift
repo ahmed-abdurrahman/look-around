@@ -20,9 +20,12 @@ class SettingsViewController: BaseViewController {
         super.viewWillAppear(animated)
         
         self.displayActivityIndicator("Contacting Forsquare..")
-        ForsquareService.sharedInstance.getNearbyVenues({
+        ForsquareService.sharedInstance.getNearbyVenues({ venues in
             self.hideActivityIndicator()
-            // success
+            for v in venues {
+                print(">>>> \(v.name!) : \(v.id!)")
+            }
+            
             }) { (error) in
                 self.hideActivityIndicator()
                 self.displayErrorMessage(error.localizedDescription)

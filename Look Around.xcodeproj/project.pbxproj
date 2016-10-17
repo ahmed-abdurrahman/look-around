@@ -12,6 +12,7 @@
 		C83645A11DB5673B00766F23 /* UrlBuilderUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83645A01DB5673B00766F23 /* UrlBuilderUtil.swift */; };
 		C83645A31DB5688600766F23 /* ForsquareService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83645A21DB5688600766F23 /* ForsquareService.swift */; };
 		C83645A51DB569DA00766F23 /* HttpErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83645A41DB569DA00766F23 /* HttpErrorHandler.swift */; };
+		C83645A71DB5793600766F23 /* VenueModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83645A61DB5793600766F23 /* VenueModel.swift */; };
 		C839CCE71DB5043400E85E37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C839CCE61DB5043400E85E37 /* AppDelegate.swift */; };
 		C839CCEE1DB5043400E85E37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C839CCED1DB5043400E85E37 /* Assets.xcassets */; };
 		C839CCF11DB5043400E85E37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C839CCEF1DB5043400E85E37 /* LaunchScreen.storyboard */; };
@@ -47,6 +48,7 @@
 		C83645A01DB5673B00766F23 /* UrlBuilderUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UrlBuilderUtil.swift; sourceTree = "<group>"; };
 		C83645A21DB5688600766F23 /* ForsquareService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForsquareService.swift; sourceTree = "<group>"; };
 		C83645A41DB569DA00766F23 /* HttpErrorHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpErrorHandler.swift; sourceTree = "<group>"; };
+		C83645A61DB5793600766F23 /* VenueModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueModel.swift; sourceTree = "<group>"; };
 		C839CCE31DB5043400E85E37 /* Look Around.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Look Around.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C839CCE61DB5043400E85E37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C839CCED1DB5043400E85E37 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 		C839CD091DB5053A00E85E37 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C83645A61DB5793600766F23 /* VenueModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -403,6 +406,7 @@
 				C839CD111DB50B4100E85E37 /* MapViewController.swift in Sources */,
 				C83645A31DB5688600766F23 /* ForsquareService.swift in Sources */,
 				C836459C1DB564BD00766F23 /* SettingsViewController.swift in Sources */,
+				C83645A71DB5793600766F23 /* VenueModel.swift in Sources */,
 				C83645A11DB5673B00766F23 /* UrlBuilderUtil.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

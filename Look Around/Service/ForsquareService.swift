@@ -16,7 +16,7 @@ class ForsquareService {
     // Singleton shared instance
     static let sharedInstance = ForsquareService()
     
-    func getNearbyVenues(success: () -> Void, fail: (error: NSError) -> Void) {
+    func getNearbyVenues(success: (venues: [VenueModel]) -> Void, fail: (error: NSError) -> Void) {
     
         let url = UrlBuilderUtil.exploreUrl
         let params: [String: AnyObject] = [
@@ -24,24 +24,29 @@ class ForsquareService {
             "client_secret": Keys.forsquareClientSecret,
             "near": "Chicago, IL",
             "section": "topPicks",
-//            "v":"20161017"
+            "v":"20161017"
         ]
         
         Alamofire.request(.GET, url, parameters: params).responseJSON { (response) in
             if let error = HttpErrorHandler.checkResponseForErrors(response) {
                 print(#function, ": ", error.localizedDescription)
                 fail(error: error)
-            } else {
-                
-                if let value = response.result.value {
+            } else if let value = response.result.value {
                     let json = JSON(value)
-                    print(json)
-//                    let responseModel = Mapper<FAQResponseModel>().map(json.object)!
+//                    print(json)
                     
                     
-//                    success(faqModel: responseModel)
+                if let itemsArray = json["response"]["groups"].array {
+                    let venuesJSON = itemsArray[0]["items"]
+                   
+                    let venues = venuesJSON.arrayValue.map { Mapper<VenueModel>().map($0["venue"].object)! }
+                    
+                    success(venues: venues)
+                    return
                 }
             }
-        }
+            
+            fail(error: NSError(domain: "", code: -1001, userInfo: HttpErrorHandler.generalErrorUserInfo))
+            }
     }
 }
