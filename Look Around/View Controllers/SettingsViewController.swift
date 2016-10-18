@@ -11,15 +11,24 @@ import CoreLocation
 
 class SettingsViewController: BaseViewController {
 
+    
+    @IBOutlet weak var lblResultLimit: UILabel!
+    @IBOutlet weak var btnSection: UIButton!
+    @IBOutlet weak var sliderLimit: UISlider!
     let locationManager = CLLocationManager()
     let resultSegue = "ShowResultSegue"
     
     var deviceCoordinates: CLLocationCoordinate2D? = nil
     var venues: [VenueModel]!
+    var section: ForsquareSection = .Food
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+    }
+
+    override func configureView() {
+        super.configureView()
         
         locationManager.requestWhenInUseAuthorization()
         if CLLocationManager.locationServicesEnabled() {
@@ -28,16 +37,33 @@ class SettingsViewController: BaseViewController {
             locationManager.startUpdatingLocation()
         }
         
-        // Do any additional setup after loading the view.
+        btnSection.setTitle(section.rawValue.capitalizedString, forState: .Normal)
+        
+        lblResultLimit.text = "\(Int(sliderLimit.value))"
     }
-
+    
+    @IBAction func sectionChangedWithSegue(segue: UIStoryboardSegue){
+    
+        let selectSectionVC = segue.sourceViewController as! SelectSectionViewController
+        self.section = selectSectionVC.selectedSection
+        self.btnSection.setTitle(self.section.rawValue.presentableString(), forState: .Normal)
+    }
+    
+    @IBAction func limitChanged(sender: UISlider) {
+        lblResultLimit.text = "\(Int(sender.value))"
+    }
+    
     
     @IBAction func tappedShowResult() {
         self.deviceCoordinates = locationManager.location?.coordinate
         
-        
-        self.displayActivityIndicator("Connecting with Forsquare...")
-        ForsquareService.sharedInstance.getNearbyVenues(deviceCoordinates?.latitude, long: deviceCoordinates?.longitude, success: { venues in
+        let limit = Int(sliderLimit.value)
+        self.displayActivityIndicator("Connecting to Forsquare...")
+        ForsquareService.sharedInstance.getNearbyVenues(deviceCoordinates?.latitude,
+                                                        long: deviceCoordinates?.longitude,
+                                                        section: section,
+                                                        limit: limit,
+                                                        success: { venues in
             self.hideActivityIndicator()
             self.venues = venues
             self.performSegueWithIdentifier(self.resultSegue, sender: self)
@@ -52,6 +78,7 @@ class SettingsViewController: BaseViewController {
         if segue.identifier == resultSegue {
             let resultVC = segue.destinationViewController as! ResultContainerViewController
             resultVC.venues = venues
+            resultVC.section = section
         }
     }
 }

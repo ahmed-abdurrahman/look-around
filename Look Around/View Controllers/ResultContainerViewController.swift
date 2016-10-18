@@ -16,6 +16,7 @@ class ResultContainerViewController: BaseViewController {
     }
     
     var venues = [VenueModel]()
+    var section: ForsquareSection!
     
     var currentViewController: UIViewController?
     lazy var resultTabVC: UIViewController? = {
@@ -36,8 +37,14 @@ class ResultContainerViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+    }
+    
+    override func configureView() {
+        super.configureView()
+        
         segmentedControl.selectedSegmentIndex = TabIndex.ListTab.rawValue
         displayCurrentTab(TabIndex.ListTab.rawValue)
+        self.navigationItem.title = section.rawValue.presentableString()
     }
     
     override func viewWillDisappear(animated: Bool) {

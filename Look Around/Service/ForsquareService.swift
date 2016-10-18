@@ -22,7 +22,7 @@ class ForsquareService {
         var params: [String: AnyObject] = [
             "client_id": Keys.forsquareClientId,
             "client_secret": Keys.forsquareClientSecret,
-            "section": "topPicks",
+            "section": section.rawValue,
             "v":"20161010",
             "limit": limit,
             "venuePhotos": 1
@@ -47,8 +47,7 @@ class ForsquareService {
                     
                 if let itemsArray = json["response"]["groups"].array {
                     let venuesJSON = itemsArray[0]["items"]
-                   
-                    print(venuesJSON)
+                    
                     let venues = venuesJSON.arrayValue.map { Mapper<VenueModel>().map($0["venue"].object)! }
                     
                     success(venues: venues)

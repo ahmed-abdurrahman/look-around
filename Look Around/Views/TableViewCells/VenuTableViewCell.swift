@@ -24,21 +24,28 @@ class VenuTableViewCell: UITableViewCell {
                 lblVenueName.text = venue.name
                 if let location = venue.location {
                     
+                    
+                    lblVenueAddress.text = "Nearby"
+                    
                     if let address = location.address {
                         lblVenueAddress.text = address
                     } else if let city = location.city{
                         lblVenueAddress.text = city
                     }
-                    
-                } else {
-                    lblVenueAddress.text = "Nearby"
                 }
-             
-                lblRating.text = "\(venue.rating!)"
-             
-                lblRating.backgroundColor = UIColor(hexString: venue.ratingColor!)
+                
                 lblRating.layer.cornerRadius = 8
                 lblRating.clipsToBounds = true
+                if let rating = venue.rating {
+                    lblRating.text = "\(rating)"
+                    lblRating.backgroundColor = UIColor(hexString: venue.ratingColor!)
+                } else {
+                    lblRating.text = "-"
+                    lblRating.backgroundColor = UIColor.lightGrayColor()
+                }
+                
+             
+                
                 
                 if let signals = venue.ratingSignals {
                 

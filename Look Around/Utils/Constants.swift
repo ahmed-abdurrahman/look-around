@@ -23,8 +23,7 @@ enum ForsquareSection: String {
     case Outdoors = "outdoors"
     case Sights = "sights"
     case Trending = "trending"
-    case Specials = "specials"
     case TopPicks = "topPicks"
     
-    static let allValues = [Food, Drinks, Coffee, Shops, Arts, Outdoors, Sights, Trending, Specials, TopPicks]
+    static let allValues = [Food, Drinks, Coffee, Shops, Arts, Outdoors, Sights, Trending, TopPicks]
 }
