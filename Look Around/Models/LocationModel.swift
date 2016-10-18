@@ -31,6 +31,6 @@ class LocationModel: NSObject, Mappable {
         city <- map["city"]
         country <- map["country"]
         lat <- map["lat"]
-        long <- map["long"]
+        long <- map["lng"]
     }
 }
