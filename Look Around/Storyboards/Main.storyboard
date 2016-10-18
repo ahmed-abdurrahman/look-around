@@ -49,10 +49,10 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SectionCell" id="5gX-Go-A9z" customClass="SectionCell" customModule="Look_Around" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="28" width="382" height="44"/>
+                                                <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5gX-Go-A9z" id="XyV-HD-Tja">
-                                                    <frame key="frameInset" width="382" height="43.666666666666664"/>
+                                                    <frame key="frameInset" width="343" height="43.666666666666664"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h3i-Xv-EDk">
@@ -290,12 +290,25 @@
                     <view key="view" contentMode="scaleToFill" id="AMv-Se-rhA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UlE-cJ-IUi">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="UlE-cJ-IUi" firstAttribute="top" secondItem="AMv-Se-rhA" secondAttribute="top" id="2Gg-dA-NHV"/>
+                            <constraint firstAttribute="trailing" secondItem="UlE-cJ-IUi" secondAttribute="trailing" id="Ccg-Uk-7w6"/>
+                            <constraint firstItem="VFl-cv-epK" firstAttribute="top" secondItem="UlE-cJ-IUi" secondAttribute="bottom" id="m5H-MZ-lOZ"/>
+                            <constraint firstItem="UlE-cJ-IUi" firstAttribute="leading" secondItem="AMv-Se-rhA" secondAttribute="leading" id="oAw-SC-HTV"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="UlE-cJ-IUi" id="Ci4-Ol-jgd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UgL-Jo-4bq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2833" y="-271"/>
+            <point key="canvasLocation" x="2831.8840579710145" y="-271.46739130434787"/>
         </scene>
         <!--Result List View Controller-->
         <scene sceneID="NuV-oT-4Ng">
@@ -313,10 +326,10 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="VenueCell" rowHeight="80" id="fcc-zk-NGv" customClass="VenuTableViewCell" customModule="Look_Around" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="80"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fcc-zk-NGv" id="TOs-JY-GsC">
-                                            <frame key="frameInset" width="414" height="80"/>
+                                            <frame key="frameInset" width="375" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cp2-Cp-kaX">
@@ -394,7 +407,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KwM-IV-f4L" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="5Yg-vG-ULj">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5Yg-vG-ULj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.25098039220000001" green="0.25098039220000001" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>

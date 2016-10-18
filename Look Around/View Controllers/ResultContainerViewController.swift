@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class ResultContainerViewController: BaseViewController {
 
@@ -17,6 +18,7 @@ class ResultContainerViewController: BaseViewController {
     
     var venues = [VenueModel]()
     var section: ForsquareSection!
+    var location: CLLocationCoordinate2D!
     
     var currentViewController: UIViewController?
     lazy var resultTabVC: UIViewController? = {
@@ -27,6 +29,7 @@ class ResultContainerViewController: BaseViewController {
     lazy var mapTabVC : UIViewController? = {
         let mapTabVC = self.storyboard?.instantiateViewControllerWithIdentifier("MapViewController") as! MapViewController
         mapTabVC.venues = self.venues
+        mapTabVC.location = self.location
         return mapTabVC
     }()
 

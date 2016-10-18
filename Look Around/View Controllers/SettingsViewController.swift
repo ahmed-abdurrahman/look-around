@@ -78,6 +78,7 @@ class SettingsViewController: BaseViewController {
         if segue.identifier == resultSegue {
             let resultVC = segue.destinationViewController as! ResultContainerViewController
             resultVC.venues = venues
+            resultVC.location = deviceCoordinates!
             resultVC.section = section
         }
     }
