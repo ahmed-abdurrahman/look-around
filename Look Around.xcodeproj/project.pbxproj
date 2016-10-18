@@ -24,6 +24,7 @@
 		C839CD0F1DB50B1200E85E37 /* ResultContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C839CD0E1DB50B1200E85E37 /* ResultContainerViewController.swift */; };
 		C839CD111DB50B4100E85E37 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C839CD101DB50B4100E85E37 /* MapViewController.swift */; };
 		C839CD131DB50B5A00E85E37 /* ResultListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C839CD121DB50B5A00E85E37 /* ResultListViewController.swift */; };
+		C8A997F01DB634C600B174DD /* UIViewController+Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A997EF1DB634C600B174DD /* UIViewController+Activity.swift */; };
 		D3BAAA307D00FF2AFCFB1D96 /* Pods_Look_AroundTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 689402B2363524CC466A9EA9 /* Pods_Look_AroundTests.framework */; };
 		E0F3763B54BAFE315D8471CE /* Pods_Look_Around.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2B7E3A9BA39E4D020B28A9D /* Pods_Look_Around.framework */; };
 /* End PBXBuildFile section */
@@ -67,6 +68,7 @@
 		C839CD0E1DB50B1200E85E37 /* ResultContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultContainerViewController.swift; sourceTree = "<group>"; };
 		C839CD101DB50B4100E85E37 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		C839CD121DB50B5A00E85E37 /* ResultListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultListViewController.swift; sourceTree = "<group>"; };
+		C8A997EF1DB634C600B174DD /* UIViewController+Activity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Activity.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +161,7 @@
 		C839CCE51DB5043400E85E37 /* Look Around */ = {
 			isa = PBXGroup;
 			children = (
+				C8A997EE1DB634A600B174DD /* Extensions */,
 				C836459D1DB566A900766F23 /* Utils */,
 				C839CD091DB5053A00E85E37 /* Models */,
 				C839CD081DB5051D00E85E37 /* Service */,
@@ -217,6 +220,14 @@
 				C83645AA1DB611CB00766F23 /* LocationModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		C8A997EE1DB634A600B174DD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C8A997EF1DB634C600B174DD /* UIViewController+Activity.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -434,6 +445,7 @@
 				C836459C1DB564BD00766F23 /* SettingsViewController.swift in Sources */,
 				C83645A71DB5793600766F23 /* VenueModel.swift in Sources */,
 				C83645A11DB5673B00766F23 /* UrlBuilderUtil.swift in Sources */,
+				C8A997F01DB634C600B174DD /* UIViewController+Activity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

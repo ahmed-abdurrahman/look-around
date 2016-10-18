@@ -12,6 +12,7 @@ target 'Look Around' do
   pod 'SwiftyJSON', '~> 2.3'
   pod 'SDWebImage', '~>3.7'
   pod 'GoogleMaps'
+  pod 'DynamicColor', '~> 2.4'
 
   target 'Look AroundTests' do
     inherit! :search_paths

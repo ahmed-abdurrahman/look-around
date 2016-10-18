@@ -17,6 +17,7 @@ class VenueModel: NSObject, Mappable {
     var url: String?
     var ratingColor: String?
     var location: LocationModel?
+    var ratingSignals: Int?
     
     override init(){
         super.init()
@@ -32,6 +33,7 @@ class VenueModel: NSObject, Mappable {
 
         rating <- map["rating"]
         ratingColor <- map["ratingColor"]
+        ratingSignals <- map["ratingSignals"]
         url <- map["url"]
         location <- map["location"]
     }

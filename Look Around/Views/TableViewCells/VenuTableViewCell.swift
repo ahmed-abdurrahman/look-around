@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import DynamicColor
 
 class VenuTableViewCell: UITableViewCell {
 
@@ -15,6 +16,7 @@ class VenuTableViewCell: UITableViewCell {
     @IBOutlet weak var lblVenueAddress: UILabel!
     @IBOutlet weak var lblRating: UILabel!
     
+    @IBOutlet weak var lblRatingSignals: UILabel!
     var venueModel: VenueModel? {
         didSet {
             
@@ -33,7 +35,15 @@ class VenuTableViewCell: UITableViewCell {
                 }
              
                 lblRating.text = "\(venue.rating!)"
-//                lblRating.textColor = venue.ratingColor!
+             
+                lblRating.backgroundColor = UIColor(hexString: venue.ratingColor!)
+                lblRating.layer.cornerRadius = 8
+                lblRating.clipsToBounds = true
+                
+                if let signals = venue.ratingSignals {
+                
+                    lblRatingSignals.text = "\(signals) ratings"
+                }
             }
         }
     }

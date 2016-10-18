@@ -10,12 +10,13 @@ import UIKit
 
 class ResultListViewController: BaseViewController {
 
+    @IBOutlet weak var tableView: UITableView!
     var venues = [VenueModel]()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    override func configureView() {
+        super.configureView()
+        
+//        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
 }
 
