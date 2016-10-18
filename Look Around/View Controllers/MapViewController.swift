@@ -10,6 +10,8 @@ import UIKit
 
 class MapViewController: BaseViewController {
 
+    var venues = [VenueModel]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

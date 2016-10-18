@@ -12,7 +12,10 @@ import CoreLocation
 class SettingsViewController: BaseViewController {
 
     let locationManager = CLLocationManager()
+    let resultSegue = "ShowResultSegue"
+    
     var deviceCoordinates: CLLocationCoordinate2D? = nil
+    var venues: [VenueModel]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,25 +30,30 @@ class SettingsViewController: BaseViewController {
         
         // Do any additional setup after loading the view.
     }
+
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
+    @IBAction func tappedShowResult() {
         self.deviceCoordinates = locationManager.location?.coordinate
         
         
         self.displayActivityIndicator("Connecting with Forsquare...")
         ForsquareService.sharedInstance.getNearbyVenues(deviceCoordinates?.latitude, long: deviceCoordinates?.longitude, success: { venues in
             self.hideActivityIndicator()
-            for v in venues {
-                print(">>>> \(v.name!) : \(v.id!)")
-            }
+            self.venues = venues
+            self.performSegueWithIdentifier(self.resultSegue, sender: self)
             
-            }) { (error) in
-                self.hideActivityIndicator()
-                self.displayErrorMessage(error.localizedDescription)
+        }) { (error) in
+            self.hideActivityIndicator()
+            self.displayErrorMessage(error.localizedDescription)
         }
     }
-
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == resultSegue {
+            let resultVC = segue.destinationViewController as! ResultContainerViewController
+            resultVC.venues = venues
+        }
+    }
 }
 
 extension SettingsViewController: CLLocationManagerDelegate {

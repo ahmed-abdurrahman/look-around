@@ -15,6 +15,7 @@ class VenueModel: NSObject, Mappable {
     var name: String?
     var rating: Float?
     var url: String?
+    var ratingColor: String?
     var location: LocationModel?
     
     override init(){
@@ -28,8 +29,9 @@ class VenueModel: NSObject, Mappable {
     func mapping(map: Map){
         id <- map["id"]
         name <- map["name"]
-        
+
         rating <- map["rating"]
+        ratingColor <- map["ratingColor"]
         url <- map["url"]
         location <- map["location"]
     }

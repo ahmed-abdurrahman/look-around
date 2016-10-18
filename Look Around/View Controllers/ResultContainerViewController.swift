@@ -15,13 +15,17 @@ class ResultContainerViewController: BaseViewController {
         case MapTab = 1
     }
     
+    var venues = [VenueModel]()
+    
     var currentViewController: UIViewController?
     lazy var resultTabVC: UIViewController? = {
-        let resultTabVC = self.storyboard?.instantiateViewControllerWithIdentifier("ResultListViewController")
+        let resultTabVC = self.storyboard?.instantiateViewControllerWithIdentifier("ResultListViewController") as! ResultListViewController
+        resultTabVC.venues = self.venues
         return resultTabVC
     }()
     lazy var mapTabVC : UIViewController? = {
-        let mapTabVC = self.storyboard?.instantiateViewControllerWithIdentifier("MapViewController")
+        let mapTabVC = self.storyboard?.instantiateViewControllerWithIdentifier("MapViewController") as! MapViewController
+        mapTabVC.venues = self.venues
         return mapTabVC
     }()
 
