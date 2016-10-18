@@ -16,14 +16,16 @@ class ForsquareService {
     // Singleton shared instance
     static let sharedInstance = ForsquareService()
     
-    func getNearbyVenues(lat: Double?, long: Double?, success: (venues: [VenueModel]) -> Void, fail: (error: NSError) -> Void) {
+    func getNearbyVenues(lat: Double?, long: Double?, limit: Int = 10, section: ForsquareSection = .Food, success: (venues: [VenueModel]) -> Void, fail: (error: NSError) -> Void) {
     
         let url = UrlBuilderUtil.exploreUrl
         var params: [String: AnyObject] = [
             "client_id": Keys.forsquareClientId,
             "client_secret": Keys.forsquareClientSecret,
             "section": "topPicks",
-            "v":"20161017"
+            "v":"20161010",
+            "limit": limit,
+            "venuePhotos": 1
         ]
         
         if let lat = lat,
@@ -46,6 +48,7 @@ class ForsquareService {
                 if let itemsArray = json["response"]["groups"].array {
                     let venuesJSON = itemsArray[0]["items"]
                    
+                    print(venuesJSON)
                     let venues = venuesJSON.arrayValue.map { Mapper<VenueModel>().map($0["venue"].object)! }
                     
                     success(venues: venues)

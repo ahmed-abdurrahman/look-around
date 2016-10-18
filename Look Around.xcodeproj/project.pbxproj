@@ -13,6 +13,7 @@
 		C83645A31DB5688600766F23 /* ForsquareService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83645A21DB5688600766F23 /* ForsquareService.swift */; };
 		C83645A51DB569DA00766F23 /* HttpErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83645A41DB569DA00766F23 /* HttpErrorHandler.swift */; };
 		C83645A71DB5793600766F23 /* VenueModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83645A61DB5793600766F23 /* VenueModel.swift */; };
+		C83645AB1DB611CB00766F23 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83645AA1DB611CB00766F23 /* LocationModel.swift */; };
 		C839CCE71DB5043400E85E37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C839CCE61DB5043400E85E37 /* AppDelegate.swift */; };
 		C839CCEE1DB5043400E85E37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C839CCED1DB5043400E85E37 /* Assets.xcassets */; };
 		C839CCF11DB5043400E85E37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C839CCEF1DB5043400E85E37 /* LaunchScreen.storyboard */; };
@@ -50,6 +51,7 @@
 		C83645A41DB569DA00766F23 /* HttpErrorHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpErrorHandler.swift; sourceTree = "<group>"; };
 		C83645A61DB5793600766F23 /* VenueModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueModel.swift; sourceTree = "<group>"; };
 		C83645A81DB57C2D00766F23 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		C83645AA1DB611CB00766F23 /* LocationModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
 		C839CCE31DB5043400E85E37 /* Look Around.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Look Around.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C839CCE61DB5043400E85E37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C839CCED1DB5043400E85E37 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				C83645A61DB5793600766F23 /* VenueModel.swift */,
+				C83645AA1DB611CB00766F23 /* LocationModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -403,6 +406,7 @@
 				C839CD0F1DB50B1200E85E37 /* ResultContainerViewController.swift in Sources */,
 				C839CD131DB50B5A00E85E37 /* ResultListViewController.swift in Sources */,
 				C839CD0D1DB50AC900E85E37 /* BaseViewController.swift in Sources */,
+				C83645AB1DB611CB00766F23 /* LocationModel.swift in Sources */,
 				C836459F1DB566CB00766F23 /* Constants.swift in Sources */,
 				C83645A51DB569DA00766F23 /* HttpErrorHandler.swift in Sources */,
 				C839CD111DB50B4100E85E37 /* MapViewController.swift in Sources */,

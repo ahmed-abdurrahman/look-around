@@ -13,6 +13,9 @@ class VenueModel: NSObject, Mappable {
     
     var id: String?
     var name: String?
+    var rating: Float?
+    var url: String?
+    var location: LocationModel?
     
     override init(){
         super.init()
@@ -25,5 +28,9 @@ class VenueModel: NSObject, Mappable {
     func mapping(map: Map){
         id <- map["id"]
         name <- map["name"]
+        
+        rating <- map["rating"]
+        url <- map["url"]
+        location <- map["location"]
     }
 }
