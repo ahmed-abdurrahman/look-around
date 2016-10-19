@@ -31,6 +31,7 @@
 		C8E00F4E1DB6BB4C00ED14A3 /* VenueDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E00F4D1DB6BB4C00ED14A3 /* VenueDetailsViewController.swift */; };
 		C8E00F501DB7E57200ED14A3 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E00F4F1DB7E57100ED14A3 /* CategoryModel.swift */; };
 		C8E00F521DB7E60300ED14A3 /* IconModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E00F511DB7E60300ED14A3 /* IconModel.swift */; };
+		C8E00F541DB7F05100ED14A3 /* ContactModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E00F531DB7F05100ED14A3 /* ContactModel.swift */; };
 		D3BAAA307D00FF2AFCFB1D96 /* Pods_Look_AroundTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 689402B2363524CC466A9EA9 /* Pods_Look_AroundTests.framework */; };
 		E0F3763B54BAFE315D8471CE /* Pods_Look_Around.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2B7E3A9BA39E4D020B28A9D /* Pods_Look_Around.framework */; };
 /* End PBXBuildFile section */
@@ -81,6 +82,7 @@
 		C8E00F4D1DB6BB4C00ED14A3 /* VenueDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueDetailsViewController.swift; sourceTree = "<group>"; };
 		C8E00F4F1DB7E57100ED14A3 /* CategoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
 		C8E00F511DB7E60300ED14A3 /* IconModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconModel.swift; sourceTree = "<group>"; };
+		C8E00F531DB7F05100ED14A3 /* ContactModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -235,6 +237,7 @@
 				C83645AA1DB611CB00766F23 /* LocationModel.swift */,
 				C8E00F4F1DB7E57100ED14A3 /* CategoryModel.swift */,
 				C8E00F511DB7E60300ED14A3 /* IconModel.swift */,
+				C8E00F531DB7F05100ED14A3 /* ContactModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -462,6 +465,7 @@
 				C836459F1DB566CB00766F23 /* Constants.swift in Sources */,
 				C83645A51DB569DA00766F23 /* HttpErrorHandler.swift in Sources */,
 				C839CD111DB50B4100E85E37 /* MapViewController.swift in Sources */,
+				C8E00F541DB7F05100ED14A3 /* ContactModel.swift in Sources */,
 				C8A997F21DB63FD700B174DD /* SelectSectionViewController.swift in Sources */,
 				C83645A31DB5688600766F23 /* ForsquareService.swift in Sources */,
 				C8E00F4E1DB6BB4C00ED14A3 /* VenueDetailsViewController.swift in Sources */,

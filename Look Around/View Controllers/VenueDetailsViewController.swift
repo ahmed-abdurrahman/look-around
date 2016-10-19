@@ -21,6 +21,7 @@ class VenueDetailsViewController: BaseViewController {
     @IBOutlet weak var lblRating: UILabel!
     @IBOutlet weak var lblRatingsCount: UILabel!
     
+    @IBOutlet weak var lblContact: UILabel!
     @IBOutlet weak var lblAddress: UILabel!
     
     var venue: VenueModel!
@@ -83,7 +84,11 @@ class VenueDetailsViewController: BaseViewController {
             lblRatingsCount.text = "\(signals) ratings"
         }
         
-        
+        if let contact = venue.contact where contact.formattedPhone != nil {
+            lblContact.text = "☏ "+contact.formattedPhone!
+        } else {
+            lblContact.hidden = true
+        }
     }
     
     func displayMap(location: CLLocationCoordinate2D) {

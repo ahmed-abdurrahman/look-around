@@ -19,6 +19,7 @@ class VenueModel: NSObject, Mappable {
     var location: LocationModel?
     var ratingSignals: Int?
     var categories: [CategoryModel]?
+    var contact: ContactModel?
     
     override init(){
         super.init()
@@ -38,5 +39,6 @@ class VenueModel: NSObject, Mappable {
         url <- map["url"]
         location <- map["location"]
         categories <- map["categories"]
+        contact <- map["contact"]
     }
 }

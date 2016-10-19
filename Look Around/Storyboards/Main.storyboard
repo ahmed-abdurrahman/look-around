@@ -444,8 +444,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="diQ-e6-ymq" userLabel="MapViewContainer">
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <imageView userInteractionEnabled="NO" alpha="0.25" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="70f-it-eh8">
-                                <color key="backgroundColor" red="0.89019607840000003" green="0.89019607840000003" blue="0.89019607840000003" alpha="1" colorSpace="calibratedRGB"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="70f-it-eh8">
+                                <color key="backgroundColor" red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1VC-hF-Vqd">
                                 <color key="backgroundColor" red="0.27058823529999998" green="0.6588235294" blue="0.76470588240000004" alpha="1" colorSpace="calibratedRGB"/>
@@ -489,14 +489,21 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ciy-4o-jHe">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="2HH-oM-mNE" firstAttribute="leading" secondItem="VcN-fM-zaU" secondAttribute="leading" id="1Op-kL-cjw"/>
                             <constraint firstItem="Qzr-bV-LCx" firstAttribute="trailing" secondItem="ttt-bd-2pK" secondAttribute="trailing" id="4cX-8m-xGZ"/>
                             <constraint firstItem="1VC-hF-Vqd" firstAttribute="leading" secondItem="VrC-CO-xKl" secondAttribute="leadingMargin" id="5BJ-S0-jvt"/>
+                            <constraint firstItem="Ciy-4o-jHe" firstAttribute="top" secondItem="vSM-4v-FwF" secondAttribute="bottom" constant="18" id="7pq-dr-b3t"/>
                             <constraint firstItem="vSM-4v-FwF" firstAttribute="top" secondItem="1VC-hF-Vqd" secondAttribute="bottom" constant="30" id="APh-Lg-8sG"/>
                             <constraint firstItem="ttt-bd-2pK" firstAttribute="leading" secondItem="2HH-oM-mNE" secondAttribute="trailing" constant="8" id="BwN-nm-fgs"/>
+                            <constraint firstItem="Ciy-4o-jHe" firstAttribute="trailing" secondItem="VrC-CO-xKl" secondAttribute="trailingMargin" id="CP5-bz-1zW"/>
                             <constraint firstItem="Qzr-bV-LCx" firstAttribute="leading" secondItem="ttt-bd-2pK" secondAttribute="leading" id="EEA-bL-YCw"/>
                             <constraint firstItem="Qzr-bV-LCx" firstAttribute="top" secondItem="ttt-bd-2pK" secondAttribute="bottom" constant="3" id="Gfl-yo-BJY"/>
                             <constraint firstItem="70f-it-eh8" firstAttribute="top" secondItem="diQ-e6-ymq" secondAttribute="bottom" id="IRg-IP-hMc"/>
@@ -508,6 +515,7 @@
                             <constraint firstAttribute="trailing" secondItem="diQ-e6-ymq" secondAttribute="trailing" id="W6B-c7-6WR"/>
                             <constraint firstItem="2HH-oM-mNE" firstAttribute="top" secondItem="VcN-fM-zaU" secondAttribute="bottom" constant="5" id="ggD-pB-ZJp"/>
                             <constraint firstItem="VcN-fM-zaU" firstAttribute="top" secondItem="1VC-hF-Vqd" secondAttribute="top" id="hXb-Vl-ajq"/>
+                            <constraint firstItem="Ciy-4o-jHe" firstAttribute="leading" secondItem="vSM-4v-FwF" secondAttribute="leading" id="ifT-iz-iRe"/>
                             <constraint firstItem="diQ-e6-ymq" firstAttribute="leading" secondItem="VrC-CO-xKl" secondAttribute="leading" id="k4a-wU-7EW"/>
                             <constraint firstItem="1VC-hF-Vqd" firstAttribute="top" secondItem="diQ-e6-ymq" secondAttribute="bottom" constant="20" id="kXY-U6-YT0"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ttt-bd-2pK" secondAttribute="trailing" id="l81-pk-tjt"/>
@@ -523,6 +531,7 @@
                         <outlet property="imgCategory" destination="1VC-hF-Vqd" id="RKr-eN-o9U"/>
                         <outlet property="imgCategoryBackground" destination="70f-it-eh8" id="FnR-cr-1sw"/>
                         <outlet property="lblAddress" destination="vSM-4v-FwF" id="VWh-s0-3Zf"/>
+                        <outlet property="lblContact" destination="Ciy-4o-jHe" id="X71-HZ-iUv"/>
                         <outlet property="lblInfo" destination="2HH-oM-mNE" id="R3y-T3-2IX"/>
                         <outlet property="lblName" destination="VcN-fM-zaU" id="7zf-SO-vLw"/>
                         <outlet property="lblRating" destination="Qzr-bV-LCx" id="wtM-dh-thW"/>
@@ -539,7 +548,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KwM-IV-f4L" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5Yg-vG-ULj">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="5Yg-vG-ULj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.25098039220000001" green="0.25098039220000001" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
