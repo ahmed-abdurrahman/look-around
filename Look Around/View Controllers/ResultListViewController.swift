@@ -10,12 +10,13 @@ import UIKit
 
 class ResultListViewController: BaseViewController {
 
+    // MARK: - Instance Variables
     @IBOutlet weak var tableView: UITableView!
     var venues = [VenueModel]()
-    
     let detailsSegue = "ListToDetailsSegue"
     var selectedVenue: VenueModel!
     
+    // MARK: - Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == detailsSegue {
             let detailsVC = segue.destinationViewController as! VenueDetailsViewController
@@ -24,6 +25,7 @@ class ResultListViewController: BaseViewController {
     }
 }
 
+// MARK: - UITableViewDelegate, UITableViewDataSource
 extension ResultListViewController: UITableViewDelegate, UITableViewDataSource {
 
    

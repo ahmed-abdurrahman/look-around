@@ -11,6 +11,7 @@ import CoreLocation
 
 class ResultContainerViewController: BaseViewController {
 
+    // MARK: - Instance Variables
     enum TabIndex : Int {
         case ListTab = 0
         case MapTab = 1
@@ -33,15 +34,11 @@ class ResultContainerViewController: BaseViewController {
         return mapTabVC
     }()
 
-    
+    // MARK: - IB Outlets
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var containerView: UIView!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-    }
-    
+    // MARK: - Lifecycle
     override func configureView() {
         super.configureView()
         
@@ -58,6 +55,8 @@ class ResultContainerViewController: BaseViewController {
         }
     }
 
+    
+    // MARK: - Actions
     @IBAction func switchTab(sender: UISegmentedControl) {
         self.currentViewController!.view.removeFromSuperview()
         self.currentViewController!.removeFromParentViewController()

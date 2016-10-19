@@ -13,20 +13,16 @@ import DynamicColor
 
 class MapViewController: BaseViewController {
 
+    // MARK: - Instance Variables
     @IBOutlet weak var mapView: UIView!
-    let detailsSegue = "MapToDetailsSegue"
     
+    let detailsSegue = "MapToDetailsSegue"
     var location: CLLocationCoordinate2D!
     var venues = [VenueModel]()
     var map: GMSMapView!
     var selectedVenue: VenueModel!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
+    // MARK: - Lifecycle
     override func configureView() {
         super.configureView()
         
@@ -39,6 +35,8 @@ class MapViewController: BaseViewController {
         map.frame = mapView.bounds
     }
     
+    
+    // MARK: - Actions & Instance Functions
     func displayMap() {
         let camera = GMSCameraPosition.cameraWithLatitude(location.latitude,
                                                           longitude: location.longitude, zoom: 13)
@@ -79,6 +77,7 @@ class MapViewController: BaseViewController {
         }
     }
     
+    // MARK: - Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == detailsSegue {
             let detailsVC = segue.destinationViewController as! VenueDetailsViewController
@@ -88,7 +87,7 @@ class MapViewController: BaseViewController {
 
 }
 
-
+// MARK: - GMSMapViewDelegate
 extension MapViewController: GMSMapViewDelegate {
 
     func mapView(mapView: GMSMapView, didTapInfoWindowOfMarker marker: GMSMarker) {

@@ -11,18 +11,21 @@ import CoreLocation
 
 class SettingsViewController: BaseViewController {
 
-    
+    // MARK: - IBOutlets
     @IBOutlet weak var btnGrantPermission: UIButton!
     @IBOutlet weak var btnTakeALook: UIButton!
     @IBOutlet weak var lblResultLimit: UILabel!
     @IBOutlet weak var btnSection: UIButton!
     @IBOutlet weak var sliderLimit: UISlider!
+    
+    // MARK: - Instance Variables
     let locationManager = CLLocationManager()
     let resultSegue = "ShowResultSegue"
-    
     var deviceCoordinates: CLLocationCoordinate2D? = nil
     var venues: [VenueModel]!
     var section: ForsquareSection = .Food
+    
+    // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,6 +57,8 @@ class SettingsViewController: BaseViewController {
         
         lblResultLimit.text = "\(Int(sliderLimit.value))"
     }
+    
+    // MARK: - IB Actions
     
     @IBAction func sectionChangedWithSegue(segue: UIStoryboardSegue){
     
@@ -92,6 +97,7 @@ class SettingsViewController: BaseViewController {
         UIApplication.sharedApplication().openURL(NSURL(string: UIApplicationOpenSettingsURLString)!)
     }
     
+    // MARK: - Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == resultSegue {
             let resultVC = segue.destinationViewController as! ResultContainerViewController
@@ -101,7 +107,7 @@ class SettingsViewController: BaseViewController {
         }
     }
 }
-
+// MARK: - CLLocationManagerDelegate
 extension SettingsViewController: CLLocationManagerDelegate {
     
     func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {

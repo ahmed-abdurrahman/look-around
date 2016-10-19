@@ -605,6 +605,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 27B06FF1A19743FA08326E93 /* Pods-Look Around.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 3NK745N5XH;
@@ -621,6 +622,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 449A776F9C4FB86B2E9580D6 /* Pods-Look Around.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 3NK745N5XH;

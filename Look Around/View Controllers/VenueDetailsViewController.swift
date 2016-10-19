@@ -13,6 +13,7 @@ import SDWebImage
 
 class VenueDetailsViewController: BaseViewController {
 
+    // MARK: - IB Outlets
     @IBOutlet weak var imgCategoryBackground: UIImageView!
     @IBOutlet weak var mapView: UIView!
     @IBOutlet weak var imgCategory: UIImageView!
@@ -20,13 +21,14 @@ class VenueDetailsViewController: BaseViewController {
     @IBOutlet weak var lblInfo: UILabel!
     @IBOutlet weak var lblRating: UILabel!
     @IBOutlet weak var lblRatingsCount: UILabel!
-    
     @IBOutlet weak var lblContact: UILabel!
     @IBOutlet weak var lblAddress: UILabel!
     
+    // MARK: - Instance Variables
     var venue: VenueModel!
     var map: GMSMapView!
     
+    // MARK: - Lifecycle
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
@@ -36,39 +38,26 @@ class VenueDetailsViewController: BaseViewController {
     override func configureView() {
         lblName.text = venue.name
         
+        self.displayLocation()
         
-        if let location = venue.location {
-            let loc = CLLocationCoordinate2D(latitude: location.lat!, longitude: location.long!)
-            displayMap(loc)
-
-            
-            lblAddress.text = "Nearby"
-            
-            if let formattedAddress = location.formattedAddress {
-                var address = ""
-                for addressLine in formattedAddress {
-                    address += addressLine + "\n"
-                }
-                
-                lblAddress.text = address
-                
-            }
-        }
-        
-        if let cats = venue.categories where cats.count > 0 {
-            let category = cats[0]
-            lblInfo.text = category.name
-            
-            if let icon = category.icon {
-                let catIconUrl = icon.prefix!.stringByReplacingOccurrencesOfString("\\", withString: "")
-                    + "100"
-                    + icon.suffix!.stringByReplacingOccurrencesOfString("\\", withString: "")
-                
-                imgCategory.sd_setImageWithURL(NSURL(string: catIconUrl))
-                imgCategoryBackground.sd_setImageWithURL(NSURL(string: catIconUrl))
-            }
-        }
+        self.displayCategory()
     
+       self.displayRatings()
+        
+       self.displayContactInfo()
+    }
+    
+    
+    // MARK: - Instance Functions
+    func displayContactInfo(){
+        if let contact = venue.contact where contact.formattedPhone != nil {
+            lblContact.text = "☏ "+contact.formattedPhone!
+        } else {
+            lblContact.hidden = true
+        }
+    }
+    
+    func displayRatings(){
         lblRating.layer.cornerRadius = 8
         lblRating.clipsToBounds = true
         if let rating = venue.rating {
@@ -83,11 +72,42 @@ class VenueDetailsViewController: BaseViewController {
             
             lblRatingsCount.text = "\(signals) ratings"
         }
-        
-        if let contact = venue.contact where contact.formattedPhone != nil {
-            lblContact.text = "☏ "+contact.formattedPhone!
-        } else {
-            lblContact.hidden = true
+
+    }
+    
+    func displayLocation(){
+        if let location = venue.location {
+            let loc = CLLocationCoordinate2D(latitude: location.lat!, longitude: location.long!)
+            displayMap(loc)
+            
+            
+            lblAddress.text = "Nearby"
+            
+            if let formattedAddress = location.formattedAddress {
+                var address = ""
+                for addressLine in formattedAddress {
+                    address += addressLine + "\n"
+                }
+                
+                lblAddress.text = address
+                
+            }
+        }
+    }
+    
+    func displayCategory(){
+        if let cats = venue.categories where cats.count > 0 {
+            let category = cats[0]
+            lblInfo.text = category.name
+            
+            if let icon = category.icon {
+                let catIconUrl = icon.prefix!.stringByReplacingOccurrencesOfString("\\", withString: "")
+                    + "100"
+                    + icon.suffix!.stringByReplacingOccurrencesOfString("\\", withString: "")
+                
+                imgCategory.sd_setImageWithURL(NSURL(string: catIconUrl))
+                imgCategoryBackground.sd_setImageWithURL(NSURL(string: catIconUrl))
+            }
         }
     }
     

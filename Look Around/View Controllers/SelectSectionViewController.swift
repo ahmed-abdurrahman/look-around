@@ -11,11 +11,7 @@ import UIKit
 class SelectSectionViewController: UIViewController {
 
     var selectedSection: ForsquareSection!
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
+    
 
     @IBAction func tappedCancel() {
         self.dismissViewControllerAnimated(true, completion: nil)
@@ -23,6 +19,7 @@ class SelectSectionViewController: UIViewController {
 
 }
 
+// MARK: - UITableViewDelegate, UITableViewDataSource
 extension SelectSectionViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
