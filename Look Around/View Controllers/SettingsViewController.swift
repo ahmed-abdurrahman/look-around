@@ -12,6 +12,8 @@ import CoreLocation
 class SettingsViewController: BaseViewController {
 
     
+    @IBOutlet weak var btnGrantPermission: UIButton!
+    @IBOutlet weak var btnTakeALook: UIButton!
     @IBOutlet weak var lblResultLimit: UILabel!
     @IBOutlet weak var btnSection: UIButton!
     @IBOutlet weak var sliderLimit: UISlider!
@@ -25,16 +27,27 @@ class SettingsViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        locationManager.delegate = self
     }
 
     override func configureView() {
         super.configureView()
         
-        locationManager.requestWhenInUseAuthorization()
-        if CLLocationManager.locationServicesEnabled() {
-            locationManager.delegate = self
+        
+        btnTakeALook.enabled = false
+        btnTakeALook.alpha = 0.6
+        btnGrantPermission.hidden =  true
+        
+        if CLLocationManager.locationServicesEnabled()
+            && (CLLocationManager.authorizationStatus() == .AuthorizedWhenInUse
+        || CLLocationManager.authorizationStatus() == .AuthorizedAlways) {
+            btnTakeALook.enabled = true
+            btnTakeALook.alpha = 1.0
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
             locationManager.startUpdatingLocation()
+        } else {
+            btnGrantPermission.hidden =  false
+            locationManager.requestWhenInUseAuthorization()
         }
         
         btnSection.setTitle(section.rawValue.capitalizedString, forState: .Normal)
@@ -74,6 +87,11 @@ class SettingsViewController: BaseViewController {
         }
     }
     
+    
+    @IBAction func tappedGrantPermission() {
+        UIApplication.sharedApplication().openURL(NSURL(string: UIApplicationOpenSettingsURLString)!)
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == resultSegue {
             let resultVC = segue.destinationViewController as! ResultContainerViewController
@@ -88,7 +106,7 @@ extension SettingsViewController: CLLocationManagerDelegate {
     
     func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
         
-        if status == .AuthorizedWhenInUse {
+        if status == .AuthorizedWhenInUse ||   status == .AuthorizedAlways {
             // 4
             locationManager.startUpdatingLocation()
         }
@@ -98,9 +116,11 @@ extension SettingsViewController: CLLocationManagerDelegate {
         
         guard let location = manager.location  else {return}
         self.deviceCoordinates = location.coordinate
+        self.btnTakeALook.enabled = true
+        self.btnTakeALook.alpha = 1.0
+        btnGrantPermission.hidden =  true
         self.locationManager.stopUpdatingLocation()
         
-        print("Device Coordinates: \(deviceCoordinates?.latitude), \(deviceCoordinates?.longitude)")
     }
     
 }

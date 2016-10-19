@@ -47,7 +47,7 @@ class ForsquareService {
                     
                 if let itemsArray = json["response"]["groups"].array {
                     let venuesJSON = itemsArray[0]["items"]
-                    print(venuesJSON)
+                    
                     let venues = venuesJSON.arrayValue.map { Mapper<VenueModel>().map($0["venue"].object)! }
                     
                     success(venues: venues)

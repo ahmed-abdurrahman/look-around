@@ -193,6 +193,14 @@
                                 <color key="textColor" red="0.25098039220000001" green="0.25098039220000001" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4rZ-6n-932">
+                                <state key="normal" title="You must grant reading location, tap to enable">
+                                    <color key="titleColor" red="0.27058823529999998" green="0.6588235294" blue="0.76470588240000004" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="tappedGrantPermission" destination="gcY-Jh-h4U" eventType="touchUpInside" id="lia-Cu-2gu"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -206,13 +214,16 @@
                             <constraint firstItem="1bC-Jl-jtI" firstAttribute="top" secondItem="6Ql-4e-m5e" secondAttribute="bottom" constant="34" id="GJ0-m5-tGj"/>
                             <constraint firstItem="6Ql-4e-m5e" firstAttribute="leading" secondItem="cNR-bH-kI4" secondAttribute="leading" constant="20" id="LKl-uE-uwQ"/>
                             <constraint firstItem="TLc-J7-Cvo" firstAttribute="top" secondItem="9UE-ZO-7QF" secondAttribute="bottom" constant="86" id="Qn3-d2-0rH"/>
+                            <constraint firstAttribute="trailing" secondItem="4rZ-6n-932" secondAttribute="trailing" constant="20" id="Sfm-NB-mow"/>
                             <constraint firstItem="1bC-Jl-jtI" firstAttribute="leading" secondItem="TLc-J7-Cvo" secondAttribute="leading" id="Weu-KN-Mv6"/>
+                            <constraint firstItem="FMH-qX-p7Z" firstAttribute="top" secondItem="4rZ-6n-932" secondAttribute="bottom" constant="8" id="WfL-Ih-csj"/>
                             <constraint firstAttribute="trailing" secondItem="FMH-qX-p7Z" secondAttribute="trailing" id="X2R-G5-uzM"/>
                             <constraint firstItem="FMH-qX-p7Z" firstAttribute="leading" secondItem="cNR-bH-kI4" secondAttribute="leading" id="Xe7-7P-pb6"/>
                             <constraint firstItem="e38-B0-Bvg" firstAttribute="centerY" secondItem="1bC-Jl-jtI" secondAttribute="centerY" id="YBg-7Q-v6T"/>
                             <constraint firstItem="e38-B0-Bvg" firstAttribute="trailing" secondItem="502-ZN-rYK" secondAttribute="trailing" id="dKc-pX-TkG"/>
                             <constraint firstItem="mO9-uk-xXz" firstAttribute="top" secondItem="FMH-qX-p7Z" secondAttribute="bottom" id="fWB-3R-HsF"/>
                             <constraint firstItem="502-ZN-rYK" firstAttribute="leading" secondItem="cNR-bH-kI4" secondAttribute="leadingMargin" constant="4" id="gFY-nt-UuJ"/>
+                            <constraint firstItem="4rZ-6n-932" firstAttribute="leading" secondItem="cNR-bH-kI4" secondAttribute="leading" constant="20" id="hBk-5M-Cfo"/>
                             <constraint firstItem="9UE-ZO-7QF" firstAttribute="leading" secondItem="cNR-bH-kI4" secondAttribute="leading" constant="15" id="r1n-PI-jfE"/>
                             <constraint firstItem="9UE-ZO-7QF" firstAttribute="top" secondItem="o58-vP-N7v" secondAttribute="bottom" constant="5" id="yW3-Tb-TfK"/>
                             <constraint firstItem="o58-vP-N7v" firstAttribute="centerX" secondItem="cNR-bH-kI4" secondAttribute="centerX" id="yoo-Cr-Wun"/>
@@ -224,7 +235,9 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
+                        <outlet property="btnGrantPermission" destination="4rZ-6n-932" id="ZSI-k7-1T8"/>
                         <outlet property="btnSection" destination="6Ql-4e-m5e" id="ZGR-7U-kf4"/>
+                        <outlet property="btnTakeALook" destination="FMH-qX-p7Z" id="Ye7-Fw-XfJ"/>
                         <outlet property="lblResultLimit" destination="e38-B0-Bvg" id="mRR-vq-vvt"/>
                         <outlet property="sliderLimit" destination="502-ZN-rYK" id="Hwx-F9-brb"/>
                         <segue destination="ZQ1-G1-gWK" kind="show" identifier="ShowResultSegue" id="hKB-co-p5K"/>
