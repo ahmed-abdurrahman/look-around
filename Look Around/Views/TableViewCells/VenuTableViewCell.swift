@@ -8,10 +8,12 @@
 
 import UIKit
 import DynamicColor
+import SDWebImage
 
 class VenuTableViewCell: UITableViewCell {
 
     
+    @IBOutlet weak var imgCategory: UIImageView!
     @IBOutlet weak var lblVenueName: UILabel!
     @IBOutlet weak var lblVenueAddress: UILabel!
     @IBOutlet weak var lblRating: UILabel!
@@ -22,17 +24,6 @@ class VenuTableViewCell: UITableViewCell {
             
             if let venue = venueModel {
                 lblVenueName.text = venue.name
-                if let location = venue.location {
-                    
-                    
-                    lblVenueAddress.text = "Nearby"
-                    
-                    if let address = location.address {
-                        lblVenueAddress.text = address
-                    } else if let city = location.city{
-                        lblVenueAddress.text = city
-                    }
-                }
                 
                 lblRating.layer.cornerRadius = 8
                 lblRating.clipsToBounds = true
@@ -44,7 +35,20 @@ class VenuTableViewCell: UITableViewCell {
                     lblRating.backgroundColor = UIColor.lightGrayColor()
                 }
                 
-             
+                if let cats = venue.categories where cats.count > 0 {
+                    let category = cats[0]
+                    lblVenueAddress.text = category.name
+                    
+                    if let icon = category.icon {
+                        let catIconUrl = icon.prefix!.stringByReplacingOccurrencesOfString("\\", withString: "")
+                            + "100"
+                            + icon.suffix!.stringByReplacingOccurrencesOfString("\\", withString: "")
+                        
+                        imgCategory.sd_setImageWithURL(NSURL(string: catIconUrl))
+                    }
+                } else {
+                    lblVenueAddress.text = ""
+                }
                 
                 
                 if let signals = venue.ratingSignals {

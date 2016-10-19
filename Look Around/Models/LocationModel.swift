@@ -17,6 +17,7 @@ class LocationModel: NSObject, Mappable {
     var country: String?
     var lat: Double?
     var long: Double?
+    var formattedAddress: [String]?
     
     override init(){
         super.init()
@@ -32,5 +33,6 @@ class LocationModel: NSObject, Mappable {
         country <- map["country"]
         lat <- map["lat"]
         long <- map["lng"]
+        formattedAddress <- map["formattedAddress"]
     }
 }

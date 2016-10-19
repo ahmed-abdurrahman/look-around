@@ -28,6 +28,9 @@
 		C8A997F01DB634C600B174DD /* UIViewController+Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A997EF1DB634C600B174DD /* UIViewController+Activity.swift */; };
 		C8A997F21DB63FD700B174DD /* SelectSectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A997F11DB63FD700B174DD /* SelectSectionViewController.swift */; };
 		C8A997F41DB6405900B174DD /* SectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A997F31DB6405900B174DD /* SectionCell.swift */; };
+		C8E00F4E1DB6BB4C00ED14A3 /* VenueDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E00F4D1DB6BB4C00ED14A3 /* VenueDetailsViewController.swift */; };
+		C8E00F501DB7E57200ED14A3 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E00F4F1DB7E57100ED14A3 /* CategoryModel.swift */; };
+		C8E00F521DB7E60300ED14A3 /* IconModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E00F511DB7E60300ED14A3 /* IconModel.swift */; };
 		D3BAAA307D00FF2AFCFB1D96 /* Pods_Look_AroundTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 689402B2363524CC466A9EA9 /* Pods_Look_AroundTests.framework */; };
 		E0F3763B54BAFE315D8471CE /* Pods_Look_Around.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2B7E3A9BA39E4D020B28A9D /* Pods_Look_Around.framework */; };
 /* End PBXBuildFile section */
@@ -75,6 +78,9 @@
 		C8A997EF1DB634C600B174DD /* UIViewController+Activity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Activity.swift"; sourceTree = "<group>"; };
 		C8A997F11DB63FD700B174DD /* SelectSectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectSectionViewController.swift; sourceTree = "<group>"; };
 		C8A997F31DB6405900B174DD /* SectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionCell.swift; sourceTree = "<group>"; };
+		C8E00F4D1DB6BB4C00ED14A3 /* VenueDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VenueDetailsViewController.swift; sourceTree = "<group>"; };
+		C8E00F4F1DB7E57100ED14A3 /* CategoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
+		C8E00F511DB7E60300ED14A3 /* IconModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +207,7 @@
 				C839CD121DB50B5A00E85E37 /* ResultListViewController.swift */,
 				C836459B1DB564BD00766F23 /* SettingsViewController.swift */,
 				C8A997F11DB63FD700B174DD /* SelectSectionViewController.swift */,
+				C8E00F4D1DB6BB4C00ED14A3 /* VenueDetailsViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -226,6 +233,8 @@
 			children = (
 				C83645A61DB5793600766F23 /* VenueModel.swift */,
 				C83645AA1DB611CB00766F23 /* LocationModel.swift */,
+				C8E00F4F1DB7E57100ED14A3 /* CategoryModel.swift */,
+				C8E00F511DB7E60300ED14A3 /* IconModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -442,6 +451,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8E00F521DB7E60300ED14A3 /* IconModel.swift in Sources */,
 				C83645AF1DB6191100766F23 /* VenuTableViewCell.swift in Sources */,
 				C839CCE71DB5043400E85E37 /* AppDelegate.swift in Sources */,
 				C839CD0F1DB50B1200E85E37 /* ResultContainerViewController.swift in Sources */,
@@ -454,9 +464,11 @@
 				C839CD111DB50B4100E85E37 /* MapViewController.swift in Sources */,
 				C8A997F21DB63FD700B174DD /* SelectSectionViewController.swift in Sources */,
 				C83645A31DB5688600766F23 /* ForsquareService.swift in Sources */,
+				C8E00F4E1DB6BB4C00ED14A3 /* VenueDetailsViewController.swift in Sources */,
 				C836459C1DB564BD00766F23 /* SettingsViewController.swift in Sources */,
 				C83645A71DB5793600766F23 /* VenueModel.swift in Sources */,
 				C8A997F41DB6405900B174DD /* SectionCell.swift in Sources */,
+				C8E00F501DB7E57200ED14A3 /* CategoryModel.swift in Sources */,
 				C83645A11DB5673B00766F23 /* UrlBuilderUtil.swift in Sources */,
 				C8A997F01DB634C600B174DD /* UIViewController+Activity.swift in Sources */,
 			);

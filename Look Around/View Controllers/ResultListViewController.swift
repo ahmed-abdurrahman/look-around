@@ -13,10 +13,14 @@ class ResultListViewController: BaseViewController {
     @IBOutlet weak var tableView: UITableView!
     var venues = [VenueModel]()
     
-    override func configureView() {
-        super.configureView()
-        
-//        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+    let detailsSegue = "ListToDetailsSegue"
+    var selectedVenue: VenueModel!
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == detailsSegue {
+            let detailsVC = segue.destinationViewController as! VenueDetailsViewController
+            detailsVC.venue = selectedVenue
+        }
     }
 }
 
@@ -38,5 +42,11 @@ extension ResultListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 70.0
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        self.selectedVenue = venues[indexPath.row]
+        self.performSegueWithIdentifier(detailsSegue, sender: self)
     }
 }

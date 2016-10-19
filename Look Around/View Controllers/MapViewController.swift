@@ -14,9 +14,12 @@ import DynamicColor
 class MapViewController: BaseViewController {
 
     @IBOutlet weak var mapView: UIView!
+    let detailsSegue = "MapToDetailsSegue"
+    
     var location: CLLocationCoordinate2D!
     var venues = [VenueModel]()
     var map: GMSMapView!
+    var selectedVenue: VenueModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +43,6 @@ class MapViewController: BaseViewController {
         let camera = GMSCameraPosition.cameraWithLatitude(location.latitude,
                                                           longitude: location.longitude, zoom: 13)
         map = GMSMapView.mapWithFrame(CGRectZero, camera: camera)
-        map.myLocationEnabled = true
         
         map.settings.compassButton = true
         map.settings.myLocationButton = true
@@ -76,6 +78,13 @@ class MapViewController: BaseViewController {
             
         }
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == detailsSegue {
+            let detailsVC = segue.destinationViewController as! VenueDetailsViewController
+            detailsVC.venue = selectedVenue
+        }
+    }
 
 }
 
@@ -83,9 +92,8 @@ class MapViewController: BaseViewController {
 extension MapViewController: GMSMapViewDelegate {
 
     func mapView(mapView: GMSMapView, didTapInfoWindowOfMarker marker: GMSMarker) {
-        let venue = marker.userData as! VenueModel
-        
-        print("didTapInfoWindowOfMarker: \(venue.name!)")
+        selectedVenue = marker.userData as! VenueModel
+        self.performSegueWithIdentifier(detailsSegue, sender: self)
     }
     
 }
